@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './navigation/navigation';
+import Navigation from './navigation/navigation';
+import Masthead from './masthead/masthead';
+import About from './about/about';
+import Projects from './projects/projects';
+import Signup from './signup/signup';
+import Contact from './contact/contact';
+import Footer from './footer/footer';
+
+
+
+window.addEventListener('DOMContentLoaded', event => {
+
+    // Navbar shrink function
+    const navbarShrink = function () {
+        const navbarCollapsible = document.body.querySelector('#mainNav');
+        if (!navbarCollapsible) {
+            return;
+        }
+        if (window.scrollY === 0) {
+            navbarCollapsible.classList.remove('navbar-shrink')
+        } else {
+            navbarCollapsible.classList.add('navbar-shrink')
+        }
+
+    };
+    // Shrink the navbar 
+    navbarShrink();
+    document.addEventListener('scroll', navbarShrink);
+ 
+});
+
+
+const App = () => {
+        return (
+            <div className='App'>
+                <Navigation/>
+                <Masthead/>
+                <About/>
+                <Projects/>
+                <Signup />
+                <Contact/>
+                <Footer/>
+            </div>
+         )
+
 }
 
 export default App;
