@@ -1,6 +1,6 @@
 # Check out my landing
 
-(https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
